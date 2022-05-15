@@ -1,0 +1,139 @@
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: #333333;
+    background: #dddddd;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+  }
+
+  .icon-button:hover {
+    cursor: pointer;
+  }
+
+  .icon-button:active {
+    background: #cccccc;
+  }
+
+  .icon-button__badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  #nav-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    padding: 7px;
+    /* background-color: rgb(61, 49, 165); */
+    color: white;
+    position:fixed;
+    background-color: rgb(1, 1, 78);
+    margin-top:-5px;
+
+  }
+  #logo-Container {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+  }
+  #logo-Container > img {
+    width: 40%;
+    height: 100%;
+    border-radius:10px;
+  }
+  #input-container {
+    width: 500px;
+    padding: 10px;
+  }
+  #input-container > input {
+    width: 90%;
+    /* border: 1px solid  rgb(69, 68, 105); */
+    background-color: rgb(69, 68, 105);
+    color: white;
+    border: 0px;
+    padding: 5px;
+    box-shadow: rgba(114, 112, 112, 0.24) 0px 3px 8px;
+  }
+  #user-container {
+    padding: 15px;
+    border-radius: 45%;
+    background-color: rgb(43, 185, 43);
+    color: white;
+  }
+  #newPost {
+    background-color: rgb(43, 185, 43);
+    color: white;
+    border: 0;
+    border-radius:5px;
+  }
+  #search {
+    /*  */
+    color: white;
+    background-color: rgb(69, 68, 105);
+    border: 0px;
+    padding: 5px;
+    margin-top: -2px;
+    
+    box-shadow: rgba(130, 129, 129, 0.24) 0px 3px 8px;
+  }
+  #cancelAdd {
+    /* back rgb(100,50,249) */
+    background-color: rgb(100, 50, 249);
+    color: white;
+    border: 0px;
+    padding: 5px;
+    box-shadow: rgba(128, 127, 127, 0.15) 1.95px 1.95px 2.6px;
+    border-radius:5px;
+  }
+  #username-container {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #search-items {
+    border: 1px solid black;
+  }
+  #searchDataDisplay {
+    width: 32%;
+    /* margin: auto; */
+    margin-left:25%;
+    /* border: 1px solid black; */
+    z-index: 100;
+    position: absolute;
+    background-color: rgb(69, 68, 105);
+    color: white;
+    /* height: 20px; */
+    max-height: 300px;
+    overflow-y: scroll;
+    margin-top:60px;
+  }
+  #serachImages{
+    width:90%;
+    box-shadow: rgba(128, 125, 125, 0.02) 0px 1px 3px 0px, rgba(115, 116, 118, 0.15) 0px 0px 0px 1px;
+    margin-left: 20px;
+    /* height:50px; */
+  }
+  #Cover{
+      background: url("../Images/coverImage.imgur.png");
+      padding:2px;
+  }
