@@ -1,0 +1,46 @@
+#smallimg{
+    width:100px;
+    height:80px;
+    margin:6px;
+   
+}
+#title{
+  font-size:16px;
+
+}
+#smalldiv{
+    display:flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgb(66, 65, 65);
+    border-radius: 5px;
+    margin:6px;
+    
+}
+#input{
+    margin-left:30%;
+   margin-top:px;
+   margin-bottom:20px;
+    
+   }
+   input{
+    padding:5px;
+    width:500px;
+    background-color: rgb(68, 67, 67);
+    color:white;
+   
+   }
+   #movies{
+       width:500px;
+       height:350px;
+       border:1px solid  rgb(48, 47, 47);
+       overflow: auto;
+       color:white;
+       background-color: black;
+      
+       
+   }
+   img{
+       border-radius: 10px;
+       height:300px;
+       width:250px;
+   }
