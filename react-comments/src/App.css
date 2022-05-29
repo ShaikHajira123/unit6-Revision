@@ -1,0 +1,19 @@
+
+.App {
+  margin-left: 1%;
+  margin-bottom: 4%;
+}
+.comment * {
+   margin-right: 20px;
+   font-size: 14px;
+   color: rgb(48, 46, 46);
+}
+
+.main{
+  border-left: 3px solid gray;
+  padding-left: 7px;
+  
+}
+.up {
+  margin-top: 10px;
+}
