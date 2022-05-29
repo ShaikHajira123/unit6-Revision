@@ -1,11 +1,17 @@
 
-import addAuth, { ADDAUTH } from './action'
+import { TOKEN , TASKS, LIST } from "./action";
 
-const init = {isAuth : false}
+const init = {token:{} , tasks:[],list:[]}
 
-const authReducer = (store=init,{type,payload}) => {
-    switch(type){
-       
-    }
-     
-}
+export const reducer = (store=init, { type, payload }) => {
+  switch (type) {
+    case TOKEN:
+      return { ...store, token: payload };
+      case TASKS:
+        return { ...store, tasks: [...store.tasks,payload] };
+        case LIST:
+          return {...store, list:payload}
+    default:
+      return store;
+  }
+};
