@@ -1,9 +1,10 @@
 import {useState} from 'react'
-import { postCity } from '../redux/City/action'
-import { useNavigate } from 'react-router-dom'
+import { updateCity } from '../redux/City/action'
+import { useNavigate ,useParams} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
-export const City = () => {
+export const Update = () => {
+    const {id} = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [city , setCity] = useState({
@@ -24,7 +25,7 @@ export const City = () => {
         <input type="text" name="Country" placeholder="Add Country" onChange={handleChange}/>
         <input type="text" name="City" placeholder="Add City" onChange={handleChange}/>
         <input type="text" name="Population" placeholder="Add Population" onChange={handleChange} />
-         <button onClick={()=>dispatch(postCity(city) , navigate('/'))}>Add City</button> 
+        <button onClick={()=>dispatch(updateCity(city,id),navigate('/'))}>Edit Details</button>
         </>
     )
 }

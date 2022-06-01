@@ -1,8 +1,8 @@
 
 import { useEffect  } from 'react'
 import { useSelector , useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import {deleteCity, getData} from '../redux/City/action'
+import { useNavigate , Link } from 'react-router-dom'
+import {deleteCity, getData ,filter} from '../redux/City/action'
 import {sort } from '../redux/City/action'
 import { getCountry } from '../redux/Country/action'
 
@@ -49,7 +49,8 @@ export const Home =() => {
                 </tbody>
             </table>
 
-
+           <input type="text" placeholder='Filter by Country' 
+           onChange={(e)=> dispatch(filter(e.target.value))}/>
             <button onClick={HandleaddCity}>Add City</button>
             <select  onChange={(e)=>{dispatch(sort(e.target.value))}}>
                 <option value="">Select</option>
@@ -72,7 +73,7 @@ export const Home =() => {
                   <td>{e.Country}</td>
                   <td>{e.City}</td>
                   <td>{e.Population}</td>
-                  <td>Edit</td>
+                  <Link to={`/add-city/${e.id}`}><td><button>Edit</button></td></Link>
                   <td><button onClick={()=>dispatch(deleteCity(e.id))}> Delete</button></td>
                     </tr>
                   )}

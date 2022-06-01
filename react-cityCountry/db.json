@@ -51,16 +51,10 @@
   ],
   "cities": [
     {
-      "id": 5,
-      "Country": "Russia",
-      "City": "Moscow",
-      "Population": "11900000"
-    },
-    {
       "id": 6,
-      "Country": "Korea",
-      "City": "Seoul",
-      "Population": "9780000"
+      "Country": "asdfghjkl",
+      "City": "qwertyuiop",
+      "Population": "1234567890"
     },
     {
       "id": 7,
