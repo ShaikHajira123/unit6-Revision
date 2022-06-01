@@ -25,7 +25,7 @@ function App() {
     setTimeout(() => {
       setPage(page++)
       getPosts();
-    }, 2000);
+    }, 3000);
   }
 
   function handleScroll() {
@@ -67,13 +67,13 @@ function App() {
           </div>
         </div>
       ))}
-      {/* {isFetching && (
+      {isFetching && (
         <div className="loader">
           <div className="circle"></div>
           <div className="circle"></div>
           <div className="circle"></div>
         </div>
-      )} */}
+      )}
     </div>
   )
 }
