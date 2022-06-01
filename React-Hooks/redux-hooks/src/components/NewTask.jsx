@@ -21,7 +21,7 @@ export const NewTask = () => {
     personal: true,
     other: true,
   });
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();34
 
   const handleChange = (e) => {
     setTask((prev) => ({ ...prev, [e.target.name]: e.target.value }));

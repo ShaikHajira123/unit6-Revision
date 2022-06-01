@@ -1,0 +1,96 @@
+{
+  "country": [
+    {
+      "id": 1,
+      "country": "France"
+    },
+    {
+      "id": 2,
+      "country": "India"
+    },
+    {
+      "id": 3,
+      "country": "Iceland"
+    },
+    {
+      "id": 4,
+      "country": "Russia"
+    },
+    {
+      "id": 5,
+      "country": "Ukraine"
+    },
+    {
+      "id": 6,
+      "country": "Korea"
+    },
+    {
+      "id": 7,
+      "country": "Switzerland"
+    },
+    {
+      "id": 8,
+      "country": "Japan"
+    },
+    {
+      "id": 9,
+      "country": "Mexico"
+    },
+    {
+      "id": 10,
+      "country": "Israel"
+    },
+    {
+      "country": "",
+      "id": 11
+    },
+    {
+      "country": "asdfgh",
+      "id": 12
+    }
+  ],
+  "cities": [
+    {
+      "id": 5,
+      "Country": "Russia",
+      "City": "Moscow",
+      "Population": "11900000"
+    },
+    {
+      "id": 6,
+      "Country": "Korea",
+      "City": "Seoul",
+      "Population": "9780000"
+    },
+    {
+      "id": 7,
+      "Country": "Israel",
+      "City": "Jerusalem",
+      "Population": "890000"
+    },
+    {
+      "id": 8,
+      "Country": "Japan",
+      "City": "Tokyo",
+      "Population": "14000000"
+    },
+    {
+      "id": 9,
+      "Country": "Italy",
+      "City": "Rome",
+      "Population": "2870000"
+    },
+    {
+      "id": 10,
+      "Country": "New Zealand",
+      "City": "Wellington",
+      "Population": "215900"
+    },
+    {
+      "Country": "pakis",
+      "City": "lahor",
+      "Population": "123456",
+      "id": 11
+    }
+  ]
+}
