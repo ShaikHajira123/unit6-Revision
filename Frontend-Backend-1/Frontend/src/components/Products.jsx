@@ -10,7 +10,8 @@ export const Product = () => {
     const [params , setParams] = useSearchParams()
     const [page , setPage] = useState(1)
     const [sort , setSort] = useState("1")
-    const [brand ,setBrand] = useState("")
+    const [color , setColor] = useState([])
+    const [brandName ,setBrand] = useState([])
     
     const getData = () => {
         axios({
@@ -19,7 +20,8 @@ export const Product = () => {
             params: {
                 page,
                 sort,
-                brand
+                brandName,
+                color
             }
         }).then(({data}) => {
             console.log(data.product)
@@ -27,26 +29,29 @@ export const Product = () => {
         }
         )
     }
-    const [filt , setFilt] = useState(prod)
     useEffect(()=> {
         getData()
-    },[page,sort ,brand])
+    },[page,sort ,brandName,color])
     
    
     useEffect(()=> {
        setParams({
             page,
             sort,
-            brand
+            brandName,
+            color
         })
-    },[page ,sort ,brand, setParams  ])
+    },[page ,sort ,brandName,color, setParams  ])
 
-    // const handleFilter =(e)=> {
-        
-    //         const keyword = e.target.value;
-        
-           
-    // }
+    const handleFilter =(s)=> {
+     setBrand(s)
+     
+    }
+
+    const handleFilterColor =(s)=> {
+      
+         setColor(s)  
+       }
     return (
         <div>
 
@@ -55,18 +60,20 @@ export const Product = () => {
                 <option  value="-1">Des</option>
             </select>
             
+            
             <select name="" id="" onChange={(e) => handleFilter(e.target.value)}>
                 <option value="">Filter By Brand</option>
                 <option value="reebok">Reebok</option>
                 <option value="nike">Nike</option>
                 <option value="woodland">Woodland</option>
             </select>
-            <select name="" id="">
+            <select name="" id="" onChange={(e) => handleFilterColor(e.target.value)}>
                 <option value="">Filter By Color</option>
                 <option value="black">Black</option>
                 <option value="grey">Grey</option>
                 <option value="brown">Brown</option>
             </select>
+
         <button disabled={page==1} onClick={()=>setPage(page-1)}>Prev</button>
         <button  onClick={()=>setPage(page+1)}>Next</button>
 
