@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.post("" , async (req,res,next) => {
     try{
-        // const page = req.query.page || 1;
+
        const product = await Product.create(req.body)
        return res.status(200).send(product)
     }
@@ -15,9 +15,42 @@ router.post("" , async (req,res,next) => {
 })
 
 router.get("/" , async(req,res) => {
+    const page = req.query.page || 1;
+    const pagesize  = req.query.pagesize || 5;
+    const skip = (page-1) * pagesize
+    let sort = req.query.sort || 1
+    const color = req.query.color
+    const brandName = req.query.brandName
     try{
-        const product = await Product.find().lean().exec()
-        return res.status(200).send(product)
+        
+        let filter = {}
+
+        if(sort == 1){
+            sort = {price :1}
+        }
+        else{
+            sort = {price :-1}
+        }
+
+        if(color){
+            filter.color = {$in : color}
+        }
+        if(brandName){
+            filter.brandName={$in : brandName}
+        }
+        
+        const product = await Product.find(filter)
+        .skip(skip)
+        .limit(pagesize)
+        .sort(sort)
+        .lean()
+        .exec()
+
+        const totalPages = Math.ceil(
+            (await Product.find(filter).countDocuments()) / pagesize
+          );
+      
+        return res.status(200).send({product , totalPages})
      }
      catch(err){
          return res.status(400).send({message:err.message})
