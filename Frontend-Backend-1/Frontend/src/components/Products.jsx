@@ -12,6 +12,7 @@ export const Product = () => {
     const [sort , setSort] = useState("1")
     const [color , setColor] = useState([])
     const [brandName ,setBrand] = useState([])
+    const [total , setTotal] = useState()
     
     const getData = () => {
         axios({
@@ -26,6 +27,7 @@ export const Product = () => {
         }).then(({data}) => {
             console.log(data.product)
             setProd(data.product)
+            setTotal(data.totalPages)
         }
         )
     }
@@ -41,17 +43,9 @@ export const Product = () => {
             brandName,
             color
         })
-    },[page ,sort ,brandName,color, setParams  ])
+    },[page ,sort ,brandName,color, setParams ])
 
-    const handleFilter =(s)=> {
-     setBrand(s)
-     
-    }
-
-    const handleFilterColor =(s)=> {
-      
-         setColor(s)  
-       }
+   
     return (
         <div>
 
@@ -61,13 +55,14 @@ export const Product = () => {
             </select>
             
             
-            <select name="" id="" onChange={(e) => handleFilter(e.target.value)}>
+            <select name="" id="" onChange={(e) => setBrand(e.target.value)}>
                 <option value="">Filter By Brand</option>
                 <option value="reebok">Reebok</option>
                 <option value="nike">Nike</option>
                 <option value="woodland">Woodland</option>
             </select>
-            <select name="" id="" onChange={(e) => handleFilterColor(e.target.value)}>
+
+            <select name="" id="" onChange={(e) => setColor(e.target.value)}>
                 <option value="">Filter By Color</option>
                 <option value="black">Black</option>
                 <option value="grey">Grey</option>
@@ -75,7 +70,7 @@ export const Product = () => {
             </select>
 
         <button disabled={page==1} onClick={()=>setPage(page-1)}>Prev</button>
-        <button  onClick={()=>setPage(page+1)}>Next</button>
+        <button  disabled={page==total}onClick={()=>setPage(page+1)}>Next</button>
 
             {prod.map((e)=>{
            return(
