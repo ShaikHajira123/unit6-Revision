@@ -18,16 +18,17 @@ router.get("/" , async(req,res) => {
     try{
         const reviews = await Reviews.find()
         .populate({
-            path:"products",
-            select:{name : 1 ,_id :0}
+            path:"productId",
+            select:{name : 1 ,email : 1 , _id :0}
         })
-        .populate({ path:"users",select:'name' })
+        .populate({ path:"userId",select:{name:1 ,_id:0} })
+        // .populate('userId').populate("productId")
         .lean()
         .exec()
         return res.status(200).send(reviews)
      }
      catch(err){
-         return res.status(400).send({message:err.message})
+         return res.status(404).send({message:err.message})
      }
 })
 

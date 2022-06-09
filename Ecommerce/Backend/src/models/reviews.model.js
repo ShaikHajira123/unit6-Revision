@@ -5,12 +5,12 @@ const reviewsSchema = new mongoose.Schema({
     review : {type:String , required:true},
     productId : {
        type : mongoose.Schema.Types.ObjectId,
-       ref : "product",
+       ref : "products",
        required : true
     },
     userId : {
         type : mongoose.Schema.Types.ObjectId,
-        ref : "user",
+        ref : "users",
         required : true
      },
 })

@@ -43,6 +43,9 @@ router.get("/" , async(req,res) => {
         .skip(skip)
         .limit(pagesize)
         .sort(sort)
+        .populate({
+            
+        })
         .lean()
         .exec()
 

@@ -4,7 +4,7 @@ const Orders = require('../models/orders.model')
 
 const router = express.Router()
 
-router.post("/create" , async (req,res,next) => {
+router.post("/create" , async (req,res) => {
     try{
 
        const orders = await Orders.create(req.body)
@@ -19,10 +19,10 @@ router.get("/" , async(req,res) => {
     try{
         const orders = await Orders.find()
         .populate([{
-            path:"products",
+            path:"productId",
             select:{name : 1 ,_id :0}
         }])
-        .populate({ path:"users",select:'name' })
+        .populate({ path:"userId",select:{name:1 ,_id:0} })
         .lean()
         .exec()
         return res.status(200).send(orders)

@@ -61,8 +61,8 @@ router.get("/:id/addresses" , async(req,res) => {
 
 router.post("/:id/addresses/create" , async(req,res) => {
     try{
-        const addresses = await User.updateOne({_id:req.params.id} , {$push: {address:req.body}})
-
+        const addresses = await User.updateOne({_id:req.params.id} , {$push : {address:req.body}})
+       
         const user = await User.findById(req.params.id).lean().exec()
         return res.status(200).send(user.address)
       

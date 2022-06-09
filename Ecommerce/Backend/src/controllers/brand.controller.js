@@ -4,7 +4,7 @@ const Brand = require('../models/brand.model')
 
 const router = express.Router()
 
-router.post("/create" , async (req,res,next) => {
+router.post("/create" , async (req,res) => {
     try{
 
        const brands = await Brand.create(req.body)
